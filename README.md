@@ -15,6 +15,7 @@ Repeat this process until the boss runs out of health or the player
 runs out of health.
 
 Inital wireframe for the app is in the home directory of this repository.
+See "CSC690_final_project_mockup.png"
 
 Must have features:
 - Home screen with buttons
