@@ -28,9 +28,13 @@ Must have features:
    - at least 1 boss to fight against
 
 Time estimates for project features:
+
 Create UI views for all screens including the "graphics"(approx 5 hours)
+
 Create logic for changing screens (approx 2 hours)
+
 Create logic for character and boss (approx 5 hours)
+
 Create logic for playing the game (approx 10-15 hours)
 
 Nice to have features(features that I will work on if there is time):
