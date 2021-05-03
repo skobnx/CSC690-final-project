@@ -1,4 +1,4 @@
-#CSC 690 Final Project
+CSC 690 Final Project
 Author: Sebastian Drake (solo)
 SFSU-ID: 913474853
 
@@ -12,6 +12,8 @@ The boss then takes a turn and attacks you.
 Repeat this process until the boss runs out of health or the player
 runs out of health.
 
+Inital wireframe for the app is in the home directory of this repository.
+
 Must have features:
 - Home screen with buttons
     - how to play
@@ -22,6 +24,12 @@ Must have features:
 - Main game screen
    - 5 types of action cards
    - at least 1 boss to fight against
+
+Time estimates for project features:
+Create UI views for all screens including the "graphics"(approx 5 hours)
+Create logic for changing screens (approx 2 hours)
+Create logic for character and boss (approx 5 hours)
+Create logic for playing the game (approx 10-15 hours)
 
 Nice to have features(features that I will work on if there is time):
 - animations
