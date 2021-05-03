@@ -1,5 +1,7 @@
 CSC 690 Final Project
+
 Author: Sebastian Drake (solo)
+
 SFSU-ID: 913474853
 
 Proposal:
