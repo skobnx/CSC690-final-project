@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,6 +37,9 @@
                                 <state key="normal" title="Start" backgroundImage="button-border">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xlu-up-NOi" kind="show" id="ZiG-mi-luW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kanji Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxK-j5-qFx">
                                 <rect key="frame" x="135" y="260" width="145" height="36"/>
@@ -68,14 +70,80 @@
                     <view key="view" contentMode="scaleToFill" id="zZS-P0-l24">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-P5-mfo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WQ4-jK-gB2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WQ4-jK-gB2" firstAttribute="bottom" secondItem="EHf-P5-mfo" secondAttribute="bottom" id="8z8-UW-RvR"/>
+                            <constraint firstItem="EHf-P5-mfo" firstAttribute="leading" secondItem="WQ4-jK-gB2" secondAttribute="leading" id="PEZ-OQ-YpI"/>
+                            <constraint firstItem="EHf-P5-mfo" firstAttribute="top" secondItem="WQ4-jK-gB2" secondAttribute="top" id="QUQ-Cw-gW5"/>
+                            <constraint firstItem="WQ4-jK-gB2" firstAttribute="trailing" secondItem="EHf-P5-mfo" secondAttribute="trailing" id="hmy-ml-s3G"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JgM-iS-PNT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xA-E1-04E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="108"/>
+            <point key="canvasLocation" x="1746" y="-238"/>
+        </scene>
+        <!--Player Select View Controller-->
+        <scene sceneID="9On-F9-aCb">
+            <objects>
+                <viewController id="xlu-up-NOi" customClass="PlayerSelectViewController" customModule="CSC690_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KuM-W2-m6N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-kX-IMK">
+                                <rect key="frame" x="184" y="241" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="ViW-ln-SXG" kind="show" id="Zkt-eL-VN3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="boI-4B-uLR"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sez-pg-Npb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEF-j6-skt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="455"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="ys9-ve-6yH">
+            <objects>
+                <viewController id="ViW-ln-SXG" customClass="GameViewController" customModule="CSC690_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6eT-d4-0rC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQM-V7-bVU">
+                                <rect key="frame" x="351" y="104" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Wuq-b3-dA2" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="6yx-pk-5cP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w67-No-EjT"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cgc-z2-sTv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1z-Ur-9GX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Wuq-b3-dA2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qt3-hE-gZk">
@@ -100,8 +168,5 @@
     <resources>
         <image name="background" width="1126" height="2437"/>
         <image name="button-border" width="204.39999389648438" height="92.519996643066406"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
