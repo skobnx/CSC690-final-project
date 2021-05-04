@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="shT-gS-EjY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-Hu-EcX">
                                 <rect key="frame" x="100" y="345" width="215" height="85"/>
@@ -27,7 +27,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sa1-UP-tm3" kind="show" id="Irh-gA-hwv"/>
+                                    <segue destination="sa1-UP-tm3" kind="show" animates="NO" id="Irh-gA-hwv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TA-Oe-8HI">
@@ -38,7 +38,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xlu-up-NOi" kind="show" id="ZiG-mi-luW"/>
+                                    <segue destination="xlu-up-NOi" kind="show" animates="NO" id="ZiG-mi-luW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kanji Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxK-j5-qFx">
@@ -72,8 +72,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-P5-mfo">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfJ-Qo-1Se">
+                                <rect key="frame" x="332" y="90" width="40" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="q7Y-Mp-SWU" kind="unwind" animates="NO" unwindAction="myUnwindActionWithUnwindSegue:" id="xag-JT-oyr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WQ4-jK-gB2"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,8 +98,9 @@
                     <navigationItem key="navigationItem" id="JgM-iS-PNT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xA-E1-04E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="q7Y-Mp-SWU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="-238"/>
+            <point key="canvasLocation" x="1745" y="-282"/>
         </scene>
         <!--Player Select View Controller-->
         <scene sceneID="9On-F9-aCb">
@@ -98,23 +110,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="nEe-hz-7Za">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-kX-IMK">
                                 <rect key="frame" x="184" y="241" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="ViW-ln-SXG" kind="show" id="Zkt-eL-VN3"/>
+                                    <segue destination="ViW-ln-SXG" kind="show" animates="NO" id="Zkt-eL-VN3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuF-hg-aUV">
+                                <rect key="frame" x="326" y="87" width="43" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iky-RO-dmQ" kind="unwind" animates="NO" unwindAction="myUnwindActionWithUnwindSegue:" id="Im9-fR-mlm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="boI-4B-uLR"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nEe-hz-7Za" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" id="6hp-4R-qlx"/>
+                            <constraint firstItem="nEe-hz-7Za" firstAttribute="leading" secondItem="boI-4B-uLR" secondAttribute="leading" id="SEn-gB-9c3"/>
+                            <constraint firstItem="boI-4B-uLR" firstAttribute="bottom" secondItem="nEe-hz-7Za" secondAttribute="bottom" id="aSw-TW-Dnt"/>
+                            <constraint firstItem="boI-4B-uLR" firstAttribute="trailing" secondItem="nEe-hz-7Za" secondAttribute="trailing" id="amy-cw-Ia3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sez-pg-Npb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEF-j6-skt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="iky-RO-dmQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="455"/>
+            <point key="canvasLocation" x="1744.9275362318842" y="454.6875"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="ys9-ve-6yH">
@@ -124,35 +157,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="sPr-c9-Ta4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQM-V7-bVU">
-                                <rect key="frame" x="351" y="104" width="41" height="30"/>
+                                <rect key="frame" x="324" y="87" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wuq-b3-dA2" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="6yx-pk-5cP"/>
+                                    <segue destination="Wuq-b3-dA2" kind="unwind" animates="NO" unwindAction="myUnwindActionWithUnwindSegue:" id="6yx-pk-5cP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w67-No-EjT"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sPr-c9-Ta4" firstAttribute="top" secondItem="w67-No-EjT" secondAttribute="top" id="RkP-Ze-IEk"/>
+                            <constraint firstItem="w67-No-EjT" firstAttribute="trailing" secondItem="sPr-c9-Ta4" secondAttribute="trailing" id="cH7-rI-bv2"/>
+                            <constraint firstItem="w67-No-EjT" firstAttribute="bottom" secondItem="sPr-c9-Ta4" secondAttribute="bottom" id="erS-z3-xey"/>
+                            <constraint firstItem="sPr-c9-Ta4" firstAttribute="leading" secondItem="w67-No-EjT" secondAttribute="leading" id="ngM-vd-TVR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cgc-z2-sTv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1z-Ur-9GX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Wuq-b3-dA2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="455"/>
+            <point key="canvasLocation" x="2618.840579710145" y="454.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qt3-hE-gZk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TTM-iz-E5c" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TTM-iz-E5c" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GPV-WL-EZc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
