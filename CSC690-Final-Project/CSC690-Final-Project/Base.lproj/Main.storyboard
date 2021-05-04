@@ -125,6 +125,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="samurai"/>
                                 <connections>
+                                    <action selector="SamuraiButton:" destination="xlu-up-NOi" eventType="touchUpInside" id="tOQ-cA-k9i"/>
                                     <segue destination="ViW-ln-SXG" kind="show" animates="NO" id="Zkt-eL-VN3"/>
                                 </connections>
                             </button>
@@ -150,6 +151,10 @@
                                 <rect key="frame" x="58" y="539" width="299" height="195"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="magic"/>
+                                <connections>
+                                    <action selector="MagicButton:" destination="xlu-up-NOi" eventType="touchUpInside" id="TMs-xc-hrd"/>
+                                    <segue destination="ViW-ln-SXG" kind="show" animates="NO" id="7Cg-ip-fw8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="boI-4B-uLR"/>
@@ -189,6 +194,13 @@
                                     <segue destination="Wuq-b3-dA2" kind="unwind" animates="NO" unwindAction="myUnwindActionWithUnwindSegue:" id="6yx-pk-5cP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d58-u6-bQm">
+                                <rect key="frame" x="186" y="221" width="36" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w67-No-EjT"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,6 +212,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cgc-z2-sTv"/>
+                    <connections>
+                        <outlet property="Character" destination="d58-u6-bQm" id="qoS-5E-zuB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1z-Ur-9GX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Wuq-b3-dA2" userLabel="Exit" sceneMemberID="exit"/>
@@ -225,6 +240,9 @@
             <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7Cg-ip-fw8"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="1126" height="2437"/>
         <image name="button-border" width="204.39999389648438" height="92.519996643066406"/>
