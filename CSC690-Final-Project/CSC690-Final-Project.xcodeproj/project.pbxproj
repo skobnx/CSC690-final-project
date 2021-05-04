@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1262838E2640EB3400C20DD3 /* howToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1262838D2640EB3400C20DD3 /* howToPlayViewController.swift */; };
 		12DB2FAB26409AC2005C73D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB2FAA26409AC2005C73D8 /* AppDelegate.swift */; };
 		12DB2FAD26409AC2005C73D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB2FAC26409AC2005C73D8 /* SceneDelegate.swift */; };
 		12DB2FAF26409AC2005C73D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB2FAE26409AC2005C73D8 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1262838D2640EB3400C20DD3 /* howToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = howToPlayViewController.swift; sourceTree = "<group>"; };
 		12DB2FA726409AC2005C73D8 /* CSC690-Final-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CSC690-Final-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DB2FAA26409AC2005C73D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12DB2FAC26409AC2005C73D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				12DB2FB826409AC3005C73D8 /* LaunchScreen.storyboard */,
 				12DB2FBB26409AC3005C73D8 /* Info.plist */,
 				12DB2FB326409AC2005C73D8 /* CSC690_Final_Project.xcdatamodeld */,
+				1262838D2640EB3400C20DD3 /* howToPlayViewController.swift */,
 			);
 			path = "CSC690-Final-Project";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1262838E2640EB3400C20DD3 /* howToPlayViewController.swift in Sources */,
 				12DB2FB526409AC2005C73D8 /* CSC690_Final_Project.xcdatamodeld in Sources */,
 				12DB2FAF26409AC2005C73D8 /* ViewController.swift in Sources */,
 				12DB2FAB26409AC2005C73D8 /* AppDelegate.swift in Sources */,
