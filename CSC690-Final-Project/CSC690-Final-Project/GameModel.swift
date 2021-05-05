@@ -16,6 +16,9 @@ class GameModel {
     // holds the player object
     var player: Player? = nil
     
+    // holds the boss object
+    var boss: Boss? = nil
+    
     // Hold the types of buttons
     var button_one_type = 0
     var button_two_type = 0
@@ -25,8 +28,10 @@ class GameModel {
     var button_three_image: UIImage? = nil
     
     // function for generating a random boss to fight
+    // should only need to call this once
     func generateBoss(){
         self.boss_type = Int.random(in: 1 ..< 3)
+        self.boss = Boss(type: boss_type)
         if self.boss_type == 1{
             self.boss_type = 1
             let dragon_image = #imageLiteral(resourceName: "dragon")

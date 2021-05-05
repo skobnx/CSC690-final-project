@@ -8,11 +8,16 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    // Player variables
     var player_type = 0
-    var boss_type = 0
     var player_hp = 0
     var player_atk = 0
     var player_def = 0
+    
+    // Boss variables
+    var boss_type = 0
+    var boss_hp = 0
+    var boss_atk = 0
     
     // Hold the types of buttons
     var button_one_type = 0
@@ -30,6 +35,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var player_hp_label: UILabel!
     @IBOutlet weak var player_atk_label: UILabel!
     @IBOutlet weak var player_def_label: UILabel!
+    @IBOutlet weak var boss_hp_label: UILabel!
+    @IBOutlet weak var boss_atk_label: UILabel!
+    @IBOutlet weak var boss_title: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +56,21 @@ class GameViewController: UIViewController {
     @objc func updateBoss(){
         self.boss_type = model.boss_type
         self.boss_image.image = model.boss_image
+        self.boss_hp = model.boss?.health ?? 0
+        self.boss_atk = model.boss?.attack ?? 0
+        self.boss_hp_label.text = String(self.boss_hp)
+        self.boss_atk_label.text = String(self.boss_atk)
+        // update the title on the view
+        if self.boss_type == 1{
+            self.boss_title.text = "Dragon"
+        }else if self.boss_type == 2{
+            self.boss_title.text = "Wolf"
+        }
     }
     
     @objc func updatePlayer(){
         self.player_image.image = model.player_image
+        // update the title on the view
         if self.player_type == 1{
             Character.text = "Samurai"
         } else if self.player_type == 2{
