@@ -55,6 +55,9 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateBossHealth), name: Notification.Name("boss_heath_updated"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerHealth), name: Notification.Name("player_heath_updated"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateBossDead), name: Notification.Name("boss_died"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerDead), name: Notification.Name("player_died"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBossCharged), name: Notification.Name("boss_charged"), object: nil)
+
         
         model.generatePlayer(playerType: self.player_type)
         model.generateBoss()
@@ -175,5 +178,17 @@ class GameViewController: UIViewController {
     @objc func updateBossDead(){
         self.boss_move_log.text = "Player has defeated \(self.boss_name)!"
     }
+    
+    @objc func updatePlayerDead(){
+        self.player_move_log.text = "\(self.boss_name) has defeated player!"
+        self.boss_move_log.text = "Better luck next time!"
+        self.player_hp = model.player?.health ?? 0
+        self.player_hp_label.text = String(self.player_hp)
+    }
+    @objc func updateBossCharged(){
+        self.boss_move_log.text = "\(self.boss_name) has charged up!"
+    }
+
+    
 
 }

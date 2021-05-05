@@ -13,6 +13,8 @@ class GameModel {
     // action will be doubled.
     // After the action is taken, multiplier resets to 1.
     var multiplier = 1
+    var boss_charged: Bool = false
+    
     var player_dmg_taken = 0
     var boss_dmg_taken = 0
     
@@ -83,23 +85,50 @@ class GameModel {
     }
     // function for cheking if game is over
     // checks the hp for both the boss and player.
-    func check_game_status(){
-        
+    func check_player_hp() -> Bool{
+        if (self.player?.health ?? 0) <= 0{
+            return true
+        }else{
+            return false
+        }
     }
     
     // function for preforming the boss attack
-    func boss_attack(){
-        print("Boss attacked")
+    func boss_preform_attack(){
         var dmg = 0
         let crit = Int.random(in: 1 ..< 101)
-        if crit <= 20{
+        if self.boss_charged{
+            dmg = (self.boss?.attack ?? 0)*3
+            self.player_dmg_taken = self.player?.takeDmg(dmg_amt: dmg) ?? 0
+            self.boss_charged = false
+        }
+        else if crit <= 15{
             dmg = (self.boss?.attack ?? 0)*2
             self.player_dmg_taken = self.player?.takeDmg(dmg_amt: dmg) ?? 0
         }else{
             dmg = (self.boss?.attack ?? 0)
             self.player_dmg_taken = self.player?.takeDmg(dmg_amt: dmg) ?? 0
         }
-        NotificationCenter.default.post(name: Notification.Name("player_heath_updated"), object: nil)
+        if self.check_player_hp(){
+            NotificationCenter.default.post(name: Notification.Name("player_died"), object: nil)
+
+        }else{
+            NotificationCenter.default.post(name: Notification.Name("player_heath_updated"), object: nil)
+        }
+    }
+    
+    func boss_move(){
+        if boss_charged == false{
+            let boss_will_charge = Int.random(in: 1 ..< 101)
+            if boss_will_charge <= 15{
+                self.boss_charged = true
+                NotificationCenter.default.post(name: Notification.Name("boss_charged"), object: nil)
+            }else{
+                self.boss_preform_attack()
+            }
+        }else{
+            self.boss_preform_attack()
+        }
     }
     
     func preform_attack(){
@@ -112,34 +141,33 @@ class GameModel {
         if (self.boss?.health ?? 0) <= 0{
             print("Boss is dead")
             NotificationCenter.default.post(name: Notification.Name("boss_died"), object: nil)
-
         }
         else{
-            self.boss_attack()
+            self.boss_move()
         }
 
     }
     
     func preform_defend(){
         print("Defended")
-        self.boss_attack()
+        self.boss_move()
     }
     
     func preform_heal(){
         print("Healed")
-        self.boss_attack()
+        self.boss_move()
     }
     
     func preform_special(){
         print("Used special attack")
-        self.boss_attack()
+        self.boss_move()
     }
     
     func preform_prep(){
         print("prepared")
         // maybe sleep? idk
         sleep(1)
-        self.boss_attack()
+        self.boss_move()
     }
     
     func getButtonImage(num: Int) -> UIImage{
