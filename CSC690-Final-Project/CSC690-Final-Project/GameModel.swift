@@ -13,6 +13,8 @@ class GameModel {
     // action will be doubled.
     // After the action is taken, multiplier resets to 1.
     var multiplier = 1
+    var player_dmg_taken = 0
+    var boss_dmg_taken = 0
     
     var player_type = 0
     var boss_type = 0
@@ -79,22 +81,67 @@ class GameModel {
         self.button_three_image = self.getButtonImage(num: card3)
         NotificationCenter.default.post(name: Notification.Name("buttons_updated"), object: nil)
     }
+    // function for cheking if game is over
+    // checks the hp for both the boss and player.
+    func check_game_status(){
+        
+    }
+    
+    // function for preforming the boss attack
+    func boss_attack(){
+        print("Boss attacked")
+        var dmg = 0
+        let crit = Int.random(in: 1 ..< 101)
+        if crit <= 20{
+            dmg = (self.boss?.attack ?? 0)*2
+            self.player_dmg_taken = self.player?.takeDmg(dmg_amt: dmg) ?? 0
+        }else{
+            dmg = (self.boss?.attack ?? 0)
+            self.player_dmg_taken = self.player?.takeDmg(dmg_amt: dmg) ?? 0
+        }
+        NotificationCenter.default.post(name: Notification.Name("player_heath_updated"), object: nil)
+    }
     
     func preform_attack(){
-        
+        print("Attacked")
+        let attack_value = (self.player?.attack ?? 1) * self.multiplier
+        self.multiplier = 1  // reset the multiplier
+        self.boss?.takeDmg(dmg_amt: attack_value)
+        self.boss_dmg_taken = attack_value
+        NotificationCenter.default.post(name: Notification.Name("boss_heath_updated"), object: nil)
+        if (self.boss?.health ?? 0) <= 0{
+            print("Boss is dead")
+            NotificationCenter.default.post(name: Notification.Name("boss_died"), object: nil)
+
+        }
+        else{
+            self.boss_attack()
+        }
+
     }
+    
     func preform_defend(){
-        
+        print("Defended")
+        self.boss_attack()
     }
+    
     func preform_heal(){
-        
+        print("Healed")
+        self.boss_attack()
     }
+    
     func preform_special(){
-        
+        print("Used special attack")
+        self.boss_attack()
     }
+    
     func preform_prep(){
-        
+        print("prepared")
+        // maybe sleep? idk
+        sleep(1)
+        self.boss_attack()
     }
+    
     func getButtonImage(num: Int) -> UIImage{
         switch num {
         case 1:

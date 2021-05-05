@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     var boss_type = 0
     var boss_hp = 0
     var boss_atk = 0
+    var boss_name = ""
     
     // Hold the types of buttons
     var button_one_type = 0
@@ -51,11 +52,15 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateBoss), name: Notification.Name("boss_created"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayer), name: Notification.Name("player_created"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtons), name: Notification.Name("buttons_updated"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBossHealth), name: Notification.Name("boss_heath_updated"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerHealth), name: Notification.Name("player_heath_updated"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBossDead), name: Notification.Name("boss_died"), object: nil)
         
         model.generatePlayer(playerType: self.player_type)
         model.generateBoss()
         model.generateButtons()
     }
+
     
     @IBAction func button_one_pressed(_ sender: Any) {
         // attack returns how much attacked for...
@@ -77,11 +82,37 @@ class GameViewController: UIViewController {
         model.generateButtons()
     }
     @IBAction func button_two_pressed(_ sender: Any) {
-        print("Button Two Pressed")
+        switch button_two_type {
+        case 1:
+            model.preform_attack()
+        case 2:
+            model.preform_defend()
+        case 3:
+            model.preform_heal()
+        case 4:
+            model.preform_special()
+        case 5:
+            model.preform_prep()
+        default:
+            print("None")
+        }
         model.generateButtons()
     }
     @IBAction func button_three_pressed(_ sender: Any) {
-        print("Button Three Pressed")
+        switch button_three_type {
+        case 1:
+            model.preform_attack()
+        case 2:
+            model.preform_defend()
+        case 3:
+            model.preform_heal()
+        case 4:
+            model.preform_special()
+        case 5:
+            model.preform_prep()
+        default:
+            print("None")
+        }
         model.generateButtons()
     }
     
@@ -94,8 +125,10 @@ class GameViewController: UIViewController {
         self.boss_atk_label.text = String(self.boss_atk)
         // update the title on the view
         if self.boss_type == 1{
+            self.boss_name = "Dragon"
             self.boss_title.text = "Dragon"
         }else if self.boss_type == 2{
+            self.boss_name = "Wolf"
             self.boss_title.text = "Wolf"
         }
     }
@@ -123,6 +156,24 @@ class GameViewController: UIViewController {
         self.button_one_type = model.button_one_type
         self.button_two_type = model.button_two_type
         self.button_three_type = model.button_three_type
+    }
+
+    @objc func updateBossHealth(){
+        self.boss_hp = model.boss?.health ?? 0
+        self.boss_hp_label.text = String(self.boss_hp)
+        let boss_dmg_taken = model.boss_dmg_taken
+        self.player_move_log.text = "Player deals \(boss_dmg_taken) damage to the \(self.boss_name)"
+    }
+    
+    @objc func updatePlayerHealth(){
+        self.player_hp = model.player?.health ?? 0
+        self.player_hp_label.text = String(self.player_hp)
+        let player_dmg_taken = model.player_dmg_taken
+        self.boss_move_log.text = "\(self.boss_name) deals \(player_dmg_taken) damage to the player!"
+    }
+    
+    @objc func updateBossDead(){
+        self.boss_move_log.text = "Player has defeated \(self.boss_name)!"
     }
 
 }

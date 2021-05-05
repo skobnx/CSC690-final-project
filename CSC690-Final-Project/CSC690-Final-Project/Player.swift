@@ -36,9 +36,10 @@ class Player{
     }
     
     // function for taking damage
-    func takeDmg(dmg_amt: Int){
+    func takeDmg(dmg_amt: Int) -> Int{
         let dmg_taken = dmg_amt - self.defense
         self.health = self.health - dmg_taken
+        return dmg_taken
     }
     
     // function for restoring health
