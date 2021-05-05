@@ -80,6 +80,21 @@ class GameModel {
         NotificationCenter.default.post(name: Notification.Name("buttons_updated"), object: nil)
     }
     
+    func preform_attack(){
+        
+    }
+    func preform_defend(){
+        
+    }
+    func preform_heal(){
+        
+    }
+    func preform_special(){
+        
+    }
+    func preform_prep(){
+        
+    }
     func getButtonImage(num: Int) -> UIImage{
         switch num {
         case 1:

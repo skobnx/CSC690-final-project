@@ -58,17 +58,19 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func button_one_pressed(_ sender: Any) {
+        // attack returns how much attacked for...
+        // can display the result here
         switch button_one_type {
         case 1:
-            print("Attack")
+            model.preform_attack()
         case 2:
-            print("Defend")
+            model.preform_defend()
         case 3:
-            print("Heal")
+            model.preform_heal()
         case 4:
-            print("Special")
+            model.preform_special()
         case 5:
-            print("Prepare")
+            model.preform_prep()
         default:
             print("None")
         }
