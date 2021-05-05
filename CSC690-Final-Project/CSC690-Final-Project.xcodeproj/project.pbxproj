@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1261BAA52642631B00712AD4 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261BAA42642631B00712AD4 /* GameModel.swift */; };
 		1262838E2640EB3400C20DD3 /* howToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1262838D2640EB3400C20DD3 /* howToPlayViewController.swift */; };
 		12628390264199C900C20DD3 /* PlayerSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1262838F264199C900C20DD3 /* PlayerSelectViewController.swift */; };
 		12628392264199FF00C20DD3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12628391264199FF00C20DD3 /* GameViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1261BAA42642631B00712AD4 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		1262838D2640EB3400C20DD3 /* howToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = howToPlayViewController.swift; sourceTree = "<group>"; };
 		1262838F264199C900C20DD3 /* PlayerSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectViewController.swift; sourceTree = "<group>"; };
 		12628391264199FF00C20DD3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				1262838D2640EB3400C20DD3 /* howToPlayViewController.swift */,
 				1262838F264199C900C20DD3 /* PlayerSelectViewController.swift */,
 				12628391264199FF00C20DD3 /* GameViewController.swift */,
+				1261BAA42642631B00712AD4 /* GameModel.swift */,
 			);
 			path = "CSC690-Final-Project";
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				1262838E2640EB3400C20DD3 /* howToPlayViewController.swift in Sources */,
 				12DB2FB526409AC2005C73D8 /* CSC690_Final_Project.xcdatamodeld in Sources */,
 				12DB2FAF26409AC2005C73D8 /* ViewController.swift in Sources */,
+				1261BAA52642631B00712AD4 /* GameModel.swift in Sources */,
 				12DB2FAB26409AC2005C73D8 /* AppDelegate.swift in Sources */,
 				12DB2FAD26409AC2005C73D8 /* SceneDelegate.swift in Sources */,
 			);
