@@ -8,6 +8,12 @@ import UIKit
 import Foundation
 
 class GameModel {
+    // When the card "Prepare" is selected
+    // this multiplier becomes 2 and then the next
+    // action will be doubled.
+    // After the action is taken, multiplier resets to 1.
+    var multiplier = 1
+    
     var player_type = 0
     var boss_type = 0
     var player_image: UIImage? = nil
@@ -65,6 +71,9 @@ class GameModel {
         let card1 = array[0]
         let card2 = array[1]
         let card3 = array[2]
+        self.button_one_type = card1
+        self.button_two_type = card2
+        self.button_three_type = card3
         self.button_one_image = self.getButtonImage(num: card1)
         self.button_two_image = self.getButtonImage(num: card2)
         self.button_three_image = self.getButtonImage(num: card3)

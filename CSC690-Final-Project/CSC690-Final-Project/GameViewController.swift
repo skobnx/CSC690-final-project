@@ -38,11 +38,15 @@ class GameViewController: UIViewController {
     @IBOutlet weak var boss_hp_label: UILabel!
     @IBOutlet weak var boss_atk_label: UILabel!
     @IBOutlet weak var boss_title: UILabel!
+    @IBOutlet weak var player_move_log: UILabel!
+    @IBOutlet weak var boss_move_log: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = true
+        self.player_move_log.text = "Game Start!"
+        self.boss_move_log.text = "Please choose an action to begin."
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateBoss), name: Notification.Name("boss_created"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayer), name: Notification.Name("player_created"), object: nil)
@@ -50,6 +54,32 @@ class GameViewController: UIViewController {
         
         model.generatePlayer(playerType: self.player_type)
         model.generateBoss()
+        model.generateButtons()
+    }
+    
+    @IBAction func button_one_pressed(_ sender: Any) {
+        switch button_one_type {
+        case 1:
+            print("Attack")
+        case 2:
+            print("Defend")
+        case 3:
+            print("Heal")
+        case 4:
+            print("Special")
+        case 5:
+            print("Prepare")
+        default:
+            print("None")
+        }
+        model.generateButtons()
+    }
+    @IBAction func button_two_pressed(_ sender: Any) {
+        print("Button Two Pressed")
+        model.generateButtons()
+    }
+    @IBAction func button_three_pressed(_ sender: Any) {
+        print("Button Three Pressed")
         model.generateButtons()
     }
     
@@ -88,6 +118,9 @@ class GameViewController: UIViewController {
         self.button_one.setImage(model.button_one_image, for: UIControl.State.normal)
         self.button_two.setImage(model.button_two_image, for: UIControl.State.normal)
         self.button_three.setImage(model.button_three_image, for: UIControl.State.normal)
+        self.button_one_type = model.button_one_type
+        self.button_two_type = model.button_two_type
+        self.button_three_type = model.button_three_type
     }
 
 }
