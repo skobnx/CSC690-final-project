@@ -57,8 +57,8 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateBossDead), name: Notification.Name("boss_died"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerDead), name: Notification.Name("player_died"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateBossCharged), name: Notification.Name("boss_charged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerPrepared), name: Notification.Name("player_prepared"), object: nil)
 
-        
         model.generatePlayer(playerType: self.player_type)
         model.generateBoss()
         model.generateButtons()
@@ -188,7 +188,9 @@ class GameViewController: UIViewController {
     @objc func updateBossCharged(){
         self.boss_move_log.text = "\(self.boss_name) has charged up!"
     }
-
-    
+    @objc func updatePlayerPrepared(){
+        let mult_level = model.multiplier
+        self.player_move_log.text = "Player has prepared next attack will do \(mult_level)x!"
+    }
 
 }

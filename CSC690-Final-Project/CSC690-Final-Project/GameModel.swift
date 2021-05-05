@@ -164,9 +164,8 @@ class GameModel {
     }
     
     func preform_prep(){
-        print("prepared")
-        // maybe sleep? idk
-        sleep(1)
+        self.multiplier += 1
+        NotificationCenter.default.post(name: Notification.Name("player_prepared"), object: nil)
         self.boss_move()
     }
     
