@@ -10,6 +10,9 @@ import UIKit
 class GameViewController: UIViewController {
     var player_type = 0
     var boss_type = 0
+    var player_hp = 0
+    var player_atk = 0
+    var player_def = 0
     
     // Hold the types of buttons
     var button_one_type = 0
@@ -24,6 +27,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var button_one: UIButton!
     @IBOutlet weak var button_two: UIButton!
     @IBOutlet weak var button_three: UIButton!
+    @IBOutlet weak var player_hp_label: UILabel!
+    @IBOutlet weak var player_atk_label: UILabel!
+    @IBOutlet weak var player_def_label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +57,14 @@ class GameViewController: UIViewController {
         } else if self.player_type == 2{
             Character.text = "Mage"
         }
+        self.player_hp = model.player?.health ?? 0
+        self.player_atk = model.player?.attack ?? 0
+        self.player_def = model.player?.defense ?? 0
+        self.player_hp_label.text = String(self.player_hp)
+        self.player_atk_label.text = String(self.player_atk)
+        self.player_def_label.text = String(self.player_def)
     }
+    
     @objc func updateButtons(){
         self.button_one.setImage(model.button_one_image, for: UIControl.State.normal)
         self.button_two.setImage(model.button_two_image, for: UIControl.State.normal)

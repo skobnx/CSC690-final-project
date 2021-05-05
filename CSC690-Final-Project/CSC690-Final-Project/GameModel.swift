@@ -13,6 +13,9 @@ class GameModel {
     var player_image: UIImage? = nil
     var boss_image: UIImage? = nil
     
+    // holds the player object
+    var player: Player? = nil
+    
     // Hold the types of buttons
     var button_one_type = 0
     var button_two_type = 0
@@ -37,8 +40,10 @@ class GameModel {
     }
     
     // function for displaying the player image
+    // should only need to call this once
     func generatePlayer(playerType: Int){
         self.player_type = playerType
+        self.player = Player(type: playerType)
         if self.player_type == 1{
             let playerImage = #imageLiteral(resourceName: "player_samurai")
             self.player_image = playerImage
