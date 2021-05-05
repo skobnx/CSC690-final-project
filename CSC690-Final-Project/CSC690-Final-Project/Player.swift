@@ -35,11 +35,23 @@ class Player{
         self.defense = def
     }
     
+    func increase_defense(){
+        self.defense = self.defense*2
+    }
+    
+    func decrease_defense(){
+        self.defense = self.defense/2
+    }
+    
     // function for taking damage
     func takeDmg(dmg_amt: Int) -> Int{
-        let dmg_taken = dmg_amt - self.defense
-        self.health = self.health - dmg_taken
-        return dmg_taken
+        if dmg_amt <= self.defense{
+            return 0// no damage was taken
+        }else{
+            let dmg_taken = dmg_amt - self.defense
+            self.health = self.health - dmg_taken
+            return dmg_taken
+        }
     }
     
     // function for restoring health

@@ -58,6 +58,10 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerDead), name: Notification.Name("player_died"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateBossCharged), name: Notification.Name("boss_charged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerPrepared), name: Notification.Name("player_prepared"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerHealed), name: Notification.Name("player_healed"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerDefended), name: Notification.Name("player_defended"), object: nil)
+        
+        
 
         model.generatePlayer(playerType: self.player_type)
         model.generateBoss()
@@ -190,7 +194,17 @@ class GameViewController: UIViewController {
     }
     @objc func updatePlayerPrepared(){
         let mult_level = model.multiplier
-        self.player_move_log.text = "Player has prepared next attack will do \(mult_level)x!"
+        self.player_move_log.text = "Player has prepared next action will do \(mult_level)x!"
     }
+    @objc func updatePlayerHealed(){
+        self.player_hp = model.player?.health ?? 0
+        self.player_hp_label.text = String(self.player_hp)
+        let heal_amt = self.model.amount_restored
+        self.player_move_log.text = "Player has restored \(heal_amt) health!"
+    }
+    @objc func updatePlayerDefended(){
+        self.player_move_log.text = "Player has doubled their defense this turn!"
+    }
+    
 
 }

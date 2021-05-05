@@ -14,6 +14,9 @@ class GameModel {
     // After the action is taken, multiplier resets to 1.
     var multiplier = 1
     var boss_charged: Bool = false
+    let amount_to_heal = 10
+    var amount_restored = 0
+
     
     var player_dmg_taken = 0
     var boss_dmg_taken = 0
@@ -145,16 +148,20 @@ class GameModel {
         else{
             self.boss_move()
         }
-
     }
     
     func preform_defend(){
-        print("Defended")
+        self.player?.increase_defense()
         self.boss_move()
+        self.player?.decrease_defense()
+        NotificationCenter.default.post(name: Notification.Name("player_defended"), object: nil)
     }
     
     func preform_heal(){
-        print("Healed")
+        self.amount_restored = self.amount_to_heal*self.multiplier
+        self.player?.heal(heal_amt: self.amount_restored)
+        self.multiplier = 1
+        NotificationCenter.default.post(name: Notification.Name("player_healed"), object: nil)
         self.boss_move()
     }
     
