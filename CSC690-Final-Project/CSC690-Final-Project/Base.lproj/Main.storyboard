@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-Hu-EcX">
-                                <rect key="frame" x="105" y="295" width="204" height="92.5"/>
+                                <rect key="frame" x="105" y="312" width="204" height="92.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="How to Play" backgroundImage="button-border">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TA-Oe-8HI">
-                                <rect key="frame" x="105" y="412.5" width="204" height="92.5"/>
+                                <rect key="frame" x="105" y="429.5" width="204" height="92.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="Start" backgroundImage="button-border">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,25 +38,26 @@
                                     <segue destination="xlu-up-NOi" kind="show" animates="NO" id="ZiG-mi-luW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kanji Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxK-j5-qFx">
-                                <rect key="frame" x="134.5" y="194" width="145" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_title" translatesAutoresizingMaskIntoConstraints="NO" id="Hdf-H1-wbo">
+                                <rect key="frame" x="87" y="144" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hdf-H1-wbo" secondAttribute="height" multiplier="15:8" id="Mh8-pd-ffQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="shT-gS-EjY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AeQ-04-CA6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="shT-gS-EjY" secondAttribute="trailing" id="FSm-c6-9Rb"/>
+                            <constraint firstItem="Hdf-H1-wbo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.57971" id="FrN-ge-6op"/>
+                            <constraint firstItem="Hdf-H1-wbo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="HvH-f6-3yH"/>
+                            <constraint firstItem="XjV-Hu-EcX" firstAttribute="top" secondItem="Hdf-H1-wbo" secondAttribute="bottom" constant="40" id="Odq-z7-jP8"/>
                             <constraint firstItem="3TA-Oe-8HI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PNd-lc-RdJ"/>
-                            <constraint firstItem="uxK-j5-qFx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="PYZ-ew-ck2"/>
                             <constraint firstAttribute="bottomMargin" secondItem="shT-gS-EjY" secondAttribute="bottom" id="ScS-xU-fk3"/>
                             <constraint firstItem="3TA-Oe-8HI" firstAttribute="top" secondItem="XjV-Hu-EcX" secondAttribute="bottom" constant="25" id="dGF-vU-8qh"/>
+                            <constraint firstItem="Hdf-H1-wbo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dcy-tG-lIG"/>
                             <constraint firstItem="XjV-Hu-EcX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9m-In-I4S"/>
-                            <constraint firstItem="XjV-Hu-EcX" firstAttribute="top" secondItem="uxK-j5-qFx" secondAttribute="bottom" constant="65" id="ei8-Df-v4q"/>
-                            <constraint firstItem="uxK-j5-qFx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jqa-l3-jhE"/>
                             <constraint firstItem="shT-gS-EjY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x6Z-XC-dGq"/>
                         </constraints>
                     </view>
@@ -410,6 +411,7 @@
         <image name="background" width="1126" height="2437"/>
         <image name="button-border" width="204.39999389648438" height="92.519996643066406"/>
         <image name="empty_button" width="675" height="694"/>
+        <image name="game_title" width="776" height="421.5"/>
         <image name="magic" width="826.5" height="609"/>
         <image name="samurai" width="675" height="758"/>
     </resources>
