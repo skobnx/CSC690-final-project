@@ -14,10 +14,9 @@ class GameModel {
     // After the action is taken, multiplier resets to 1.
     var multiplier = 1
     var boss_charged: Bool = false
-    let amount_to_heal = 10
+    var amount_to_heal = 0
     var amount_restored = 0
 
-    
     var player_dmg_taken = 0
     var boss_dmg_taken = 0
     
@@ -71,7 +70,6 @@ class GameModel {
         }
         NotificationCenter.default.post(name: Notification.Name("player_created"), object: nil)
     }
-    
     func generateButtons(){
         var array = [1, 2, 3, 4, 5]
         array.shuffle()
@@ -135,14 +133,12 @@ class GameModel {
     }
     
     func preform_attack(){
-        print("Attacked")
         let attack_value = (self.player?.attack ?? 1) * self.multiplier
         self.multiplier = 1  // reset the multiplier
         self.boss?.takeDmg(dmg_amt: attack_value)
         self.boss_dmg_taken = attack_value
         NotificationCenter.default.post(name: Notification.Name("boss_heath_updated"), object: nil)
         if (self.boss?.health ?? 0) <= 0{
-            print("Boss is dead")
             NotificationCenter.default.post(name: Notification.Name("boss_died"), object: nil)
         }
         else{
@@ -158,6 +154,7 @@ class GameModel {
     }
     
     func preform_heal(){
+        self.amount_to_heal = Int.random(in: 7 ..< 12)
         self.amount_restored = self.amount_to_heal*self.multiplier
         self.player?.heal(heal_amt: self.amount_restored)
         self.multiplier = 1
@@ -166,8 +163,25 @@ class GameModel {
     }
     
     func preform_special(){
-        print("Used special attack")
-        self.boss_move()
+        let attack_dmg: Int = ((self.player?.attack ?? 1)/2) * self.multiplier
+        self.multiplier = 1
+        let will_stun_boss = Int.random(in: 1 ..< 101)
+        self.boss?.takeDmg(dmg_amt: attack_dmg)
+        self.boss_dmg_taken = attack_dmg
+        NotificationCenter.default.post(name: Notification.Name("boss_heath_updated"), object: nil)
+        if (self.boss?.health ?? 0) <= 0{
+            NotificationCenter.default.post(name: Notification.Name("boss_died"), object: nil)
+        } else{
+            // 40% chance to stun boss
+            if will_stun_boss <= 60{
+                self.boss_move()
+            }else{
+                // condition if boss is stunned
+                // boss loses his charge
+                self.boss_charged = false
+                NotificationCenter.default.post(name: Notification.Name("boss_stunned"), object: nil)
+            }
+        }
     }
     
     func preform_prep(){

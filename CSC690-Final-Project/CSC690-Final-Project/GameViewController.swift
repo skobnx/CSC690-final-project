@@ -41,6 +41,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var boss_title: UILabel!
     @IBOutlet weak var player_move_log: UILabel!
     @IBOutlet weak var boss_move_log: UILabel!
+    @IBOutlet weak var play_again_button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,7 @@ class GameViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.player_move_log.text = "Game Start!"
         self.boss_move_log.text = "Please choose an action to begin."
+        self.play_again_button.isHidden = true
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateBoss), name: Notification.Name("boss_created"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayer), name: Notification.Name("player_created"), object: nil)
@@ -60,9 +62,9 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerPrepared), name: Notification.Name("player_prepared"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerHealed), name: Notification.Name("player_healed"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerDefended), name: Notification.Name("player_defended"), object: nil)
-        
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBossStunned), name: Notification.Name("boss_stunned"), object: nil)
 
+        
         model.generatePlayer(playerType: self.player_type)
         model.generateBoss()
         model.generateButtons()
@@ -181,6 +183,7 @@ class GameViewController: UIViewController {
     
     @objc func updateBossDead(){
         self.boss_move_log.text = "Player has defeated \(self.boss_name)!"
+        self.hideButtons()
     }
     
     @objc func updatePlayerDead(){
@@ -188,6 +191,7 @@ class GameViewController: UIViewController {
         self.boss_move_log.text = "Better luck next time!"
         self.player_hp = model.player?.health ?? 0
         self.player_hp_label.text = String(self.player_hp)
+        self.hideButtons()
     }
     @objc func updateBossCharged(){
         self.boss_move_log.text = "\(self.boss_name) has charged up!"
@@ -205,6 +209,16 @@ class GameViewController: UIViewController {
     @objc func updatePlayerDefended(){
         self.player_move_log.text = "Player has doubled their defense this turn!"
     }
+    @objc func updateBossStunned(){
+        self.boss_move_log.text = "Special attack stunned boss!"
+    }
     
+    func hideButtons(){
+        self.button_one.isHidden = true
+        self.button_two.isHidden = true
+        self.button_three.isHidden = true
+        self.play_again_button.isHidden = false
+    }
 
+    
 }

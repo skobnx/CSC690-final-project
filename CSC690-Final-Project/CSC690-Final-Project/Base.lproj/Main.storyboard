@@ -324,6 +324,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzD-gv-iGV">
+                                <rect key="frame" x="140" y="743" width="143" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Play Again" backgroundImage="button-border">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iky-RO-dmQ" kind="unwind" animates="NO" unwindAction="myUnwindActionWithUnwindSegue:" id="udF-48-zf5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w67-No-EjT"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -345,6 +356,7 @@
                         <outlet property="button_one" destination="4Mc-s3-Dre" id="8kr-K7-aSb"/>
                         <outlet property="button_three" destination="X9E-d4-PEe" id="nfZ-ip-CK5"/>
                         <outlet property="button_two" destination="x6h-fS-Cqk" id="fdf-V9-Phb"/>
+                        <outlet property="play_again_button" destination="gzD-gv-iGV" id="tzO-hW-OAq"/>
                         <outlet property="player_atk_label" destination="wlM-8a-8b0" id="kKg-pV-CcW"/>
                         <outlet property="player_def_label" destination="7ZP-S6-Apz" id="oXt-gR-EUz"/>
                         <outlet property="player_hp_label" destination="szI-93-gEJ" id="9iD-3U-nTI"/>
