@@ -29,7 +29,6 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var boss_image: UIImageView!
     @IBOutlet weak var player_image: UIImageView!
-    @IBOutlet weak var Character: UILabel!
     @IBOutlet weak var button_one: UIButton!
     @IBOutlet weak var button_two: UIButton!
     @IBOutlet weak var button_three: UIButton!
@@ -145,11 +144,11 @@ class GameViewController: UIViewController {
     @objc func updatePlayer(){
         self.player_image.image = model.player_image
         // update the title on the view
-        if self.player_type == 1{
-            Character.text = "Samurai"
-        } else if self.player_type == 2{
-            Character.text = "Mage"
-        }
+//        if self.player_type == 1{
+//            Character.text = "Samurai"
+//        } else if self.player_type == 2{
+//            Character.text = "Mage"
+//        }
         self.player_hp = model.player?.health ?? 0
         self.player_atk = model.player?.attack ?? 0
         self.player_def = model.player?.defense ?? 0
