@@ -120,18 +120,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="nEe-hz-7Za">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-kX-IMK">
-                                <rect key="frame" x="100" y="241" width="215" height="224"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="samurai"/>
-                                <connections>
-                                    <action selector="SamuraiButton:" destination="xlu-up-NOi" eventType="touchUpInside" id="tOQ-cA-k9i"/>
-                                    <segue destination="ViW-ln-SXG" kind="show" animates="NO" id="Zkt-eL-VN3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuF-hg-aUV">
-                                <rect key="frame" x="326" y="87" width="43" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuF-hg-aUV">
+                                <rect key="frame" x="321" y="94" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,9 +130,8 @@
                                     <segue destination="iky-RO-dmQ" kind="unwind" animates="NO" unwindAction="myUnwindActionWithUnwindSegue:" id="Im9-fR-mlm"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a Class:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOJ-il-ti7">
-                                <rect key="frame" x="105" y="176" width="205" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Class:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOJ-il-ti7">
+                                <rect key="frame" x="104.5" y="169" width="205" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -156,14 +145,27 @@
                                     <segue destination="ViW-ln-SXG" kind="show" animates="NO" id="7Cg-ip-fw8"/>
                                 </connections>
                             </button>
+                            <button contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-kX-IMK">
+                                <rect key="frame" x="89" y="243" width="237" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="samurai"/>
+                                <connections>
+                                    <action selector="SamuraiButton:" destination="xlu-up-NOi" eventType="touchUpInside" id="tOQ-cA-k9i"/>
+                                    <segue destination="ViW-ln-SXG" kind="show" animates="NO" id="Zkt-eL-VN3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="boI-4B-uLR"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GOJ-il-ti7" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" constant="125" id="0Wj-In-ofs"/>
                             <constraint firstItem="nEe-hz-7Za" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" id="6hp-4R-qlx"/>
+                            <constraint firstItem="FuF-hg-aUV" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" constant="50" id="PN3-jr-3N4"/>
                             <constraint firstItem="nEe-hz-7Za" firstAttribute="leading" secondItem="boI-4B-uLR" secondAttribute="leading" id="SEn-gB-9c3"/>
                             <constraint firstItem="boI-4B-uLR" firstAttribute="bottom" secondItem="nEe-hz-7Za" secondAttribute="bottom" id="aSw-TW-Dnt"/>
                             <constraint firstItem="boI-4B-uLR" firstAttribute="trailing" secondItem="nEe-hz-7Za" secondAttribute="trailing" id="amy-cw-Ia3"/>
+                            <constraint firstItem="boI-4B-uLR" firstAttribute="trailing" secondItem="FuF-hg-aUV" secondAttribute="trailing" constant="50" id="eBQ-88-tJg"/>
+                            <constraint firstItem="GOJ-il-ti7" firstAttribute="centerX" secondItem="KuM-W2-m6N" secondAttribute="centerX" id="xuR-Oe-1xN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sez-pg-Npb"/>
@@ -395,7 +397,7 @@
         <image name="background" width="1126" height="2437"/>
         <image name="button-border" width="204.39999389648438" height="92.519996643066406"/>
         <image name="empty_button" width="675" height="694"/>
-        <image name="magic" width="826.1300048828125" height="608.3800048828125"/>
+        <image name="magic" width="826.5" height="609"/>
         <image name="samurai" width="675" height="758"/>
     </resources>
 </document>

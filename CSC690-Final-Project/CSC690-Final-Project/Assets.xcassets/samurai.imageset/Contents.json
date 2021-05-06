@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "samurai.svg",
-      "idiom" : "universal"
+      "filename" : "samurai.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "samurai@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "samurai@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
