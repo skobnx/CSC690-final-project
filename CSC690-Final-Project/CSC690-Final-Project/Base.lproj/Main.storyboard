@@ -18,9 +18,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="shT-gS-EjY">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-Hu-EcX">
-                                <rect key="frame" x="100" y="345" width="215" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-Hu-EcX">
+                                <rect key="frame" x="105" y="295" width="204" height="92.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="How to Play" backgroundImage="button-border">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,9 +28,8 @@
                                     <segue destination="sa1-UP-tm3" kind="show" animates="NO" id="Irh-gA-hwv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TA-Oe-8HI">
-                                <rect key="frame" x="100" y="455" width="215" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TA-Oe-8HI">
+                                <rect key="frame" x="105" y="412.5" width="204" height="92.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="Start" backgroundImage="button-border">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,9 +38,8 @@
                                     <segue destination="xlu-up-NOi" kind="show" animates="NO" id="ZiG-mi-luW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kanji Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxK-j5-qFx">
-                                <rect key="frame" x="135" y="260" width="145" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kanji Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxK-j5-qFx">
+                                <rect key="frame" x="134.5" y="194" width="145" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +50,13 @@
                         <constraints>
                             <constraint firstItem="shT-gS-EjY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AeQ-04-CA6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="shT-gS-EjY" secondAttribute="trailing" id="FSm-c6-9Rb"/>
+                            <constraint firstItem="3TA-Oe-8HI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PNd-lc-RdJ"/>
+                            <constraint firstItem="uxK-j5-qFx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="PYZ-ew-ck2"/>
                             <constraint firstAttribute="bottomMargin" secondItem="shT-gS-EjY" secondAttribute="bottom" id="ScS-xU-fk3"/>
+                            <constraint firstItem="3TA-Oe-8HI" firstAttribute="top" secondItem="XjV-Hu-EcX" secondAttribute="bottom" constant="25" id="dGF-vU-8qh"/>
+                            <constraint firstItem="XjV-Hu-EcX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9m-In-I4S"/>
+                            <constraint firstItem="XjV-Hu-EcX" firstAttribute="top" secondItem="uxK-j5-qFx" secondAttribute="bottom" constant="65" id="ei8-Df-v4q"/>
+                            <constraint firstItem="uxK-j5-qFx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jqa-l3-jhE"/>
                             <constraint firstItem="shT-gS-EjY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x6Z-XC-dGq"/>
                         </constraints>
                     </view>
@@ -121,7 +124,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuF-hg-aUV">
-                                <rect key="frame" x="321" y="94" width="43" height="36"/>
+                                <rect key="frame" x="321" y="84" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,24 +134,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Class:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOJ-il-ti7">
-                                <rect key="frame" x="104.5" y="169" width="205" height="38"/>
+                                <rect key="frame" x="104.5" y="119" width="205" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-l1-S6U">
-                                <rect key="frame" x="58" y="535" width="299" height="195"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-l1-S6U">
+                                <rect key="frame" x="57.5" y="443" width="299" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EyS-l1-S6U" secondAttribute="height" multiplier="23:15" id="bWn-0Z-y0H"/>
+                                </constraints>
                                 <state key="normal" image="magic"/>
                                 <connections>
                                     <action selector="MagicButton:" destination="xlu-up-NOi" eventType="touchUpInside" id="TMs-xc-hrd"/>
                                     <segue destination="ViW-ln-SXG" kind="show" animates="NO" id="7Cg-ip-fw8"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-kX-IMK">
-                                <rect key="frame" x="89" y="243" width="237" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="samurai"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-kX-IMK">
+                                <rect key="frame" x="88.5" y="177" width="237" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9v3-kX-IMK" secondAttribute="height" multiplier="79:82" id="nnR-b7-SjX"/>
+                                </constraints>
+                                <state key="normal" title=" " image="samurai"/>
                                 <connections>
                                     <action selector="SamuraiButton:" destination="xlu-up-NOi" eventType="touchUpInside" id="tOQ-cA-k9i"/>
                                     <segue destination="ViW-ln-SXG" kind="show" animates="NO" id="Zkt-eL-VN3"/>
@@ -158,14 +165,20 @@
                         <viewLayoutGuide key="safeArea" id="boI-4B-uLR"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GOJ-il-ti7" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" constant="125" id="0Wj-In-ofs"/>
+                            <constraint firstItem="GOJ-il-ti7" firstAttribute="centerX" secondItem="KuM-W2-m6N" secondAttribute="centerX" id="06w-9n-3r8"/>
+                            <constraint firstItem="GOJ-il-ti7" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" constant="75" id="0Wj-In-ofs"/>
+                            <constraint firstItem="EyS-l1-S6U" firstAttribute="top" secondItem="9v3-kX-IMK" secondAttribute="bottom" constant="20" id="6KM-d2-ULU"/>
                             <constraint firstItem="nEe-hz-7Za" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" id="6hp-4R-qlx"/>
-                            <constraint firstItem="FuF-hg-aUV" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" constant="50" id="PN3-jr-3N4"/>
+                            <constraint firstItem="9v3-kX-IMK" firstAttribute="height" secondItem="KuM-W2-m6N" secondAttribute="height" multiplier="0.274554" id="CjP-aS-mtw"/>
+                            <constraint firstItem="FuF-hg-aUV" firstAttribute="top" secondItem="boI-4B-uLR" secondAttribute="top" constant="40" id="PN3-jr-3N4"/>
                             <constraint firstItem="nEe-hz-7Za" firstAttribute="leading" secondItem="boI-4B-uLR" secondAttribute="leading" id="SEn-gB-9c3"/>
                             <constraint firstItem="boI-4B-uLR" firstAttribute="bottom" secondItem="nEe-hz-7Za" secondAttribute="bottom" id="aSw-TW-Dnt"/>
                             <constraint firstItem="boI-4B-uLR" firstAttribute="trailing" secondItem="nEe-hz-7Za" secondAttribute="trailing" id="amy-cw-Ia3"/>
+                            <constraint firstItem="9v3-kX-IMK" firstAttribute="centerX" secondItem="KuM-W2-m6N" secondAttribute="centerX" id="dcw-rH-aC6"/>
+                            <constraint firstItem="EyS-l1-S6U" firstAttribute="width" secondItem="KuM-W2-m6N" secondAttribute="width" multiplier="0.722222" id="dkp-5X-bsf"/>
                             <constraint firstItem="boI-4B-uLR" firstAttribute="trailing" secondItem="FuF-hg-aUV" secondAttribute="trailing" constant="50" id="eBQ-88-tJg"/>
-                            <constraint firstItem="GOJ-il-ti7" firstAttribute="centerX" secondItem="KuM-W2-m6N" secondAttribute="centerX" id="xuR-Oe-1xN"/>
+                            <constraint firstItem="9v3-kX-IMK" firstAttribute="top" secondItem="GOJ-il-ti7" secondAttribute="bottom" constant="20" id="ihm-4o-tNu"/>
+                            <constraint firstItem="EyS-l1-S6U" firstAttribute="centerX" secondItem="KuM-W2-m6N" secondAttribute="centerX" id="yzB-qI-t0L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sez-pg-Npb"/>
