@@ -18,8 +18,8 @@ class Boss{
         var atk = 0
         // case 1: Dragon
         if type == 1{
-            hp = 100//testing
-            atk = 10
+            hp = 90//testing
+            atk = 11
         }
         // case 2: Wolf
         else if type == 2{

@@ -19,9 +19,9 @@ class Player{
         }
         // case 2: mage
         else if type == 2{
-            hp = 50
+            hp = 65
             atk = 15
-            def = 2
+            def = 3
         }
         self.health = hp
         self.attack = atk
