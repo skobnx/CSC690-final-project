@@ -20,6 +20,7 @@
 		12DB2FB526409AC2005C73D8 /* CSC690_Final_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12DB2FB326409AC2005C73D8 /* CSC690_Final_Project.xcdatamodeld */; };
 		12DB2FB726409AC3005C73D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12DB2FB626409AC3005C73D8 /* Assets.xcassets */; };
 		12DB2FBA26409AC3005C73D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DB2FB826409AC3005C73D8 /* LaunchScreen.storyboard */; };
+		12E5293526447C880022B439 /* HowToPlayModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5293426447C880022B439 /* HowToPlayModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		12DB2FB626409AC3005C73D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12DB2FB926409AC3005C73D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12DB2FBB26409AC3005C73D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12E5293426447C880022B439 /* HowToPlayModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				12DB2FAC26409AC2005C73D8 /* SceneDelegate.swift */,
 				12DB2FAE26409AC2005C73D8 /* ViewController.swift */,
 				12DB2FB026409AC2005C73D8 /* Main.storyboard */,
+				12E5293426447C880022B439 /* HowToPlayModalViewController.swift */,
 				12DB2FB626409AC3005C73D8 /* Assets.xcassets */,
 				12DB2FB826409AC3005C73D8 /* LaunchScreen.storyboard */,
 				12DB2FBB26409AC3005C73D8 /* Info.plist */,
@@ -160,6 +163,7 @@
 			files = (
 				12628392264199FF00C20DD3 /* GameViewController.swift in Sources */,
 				12628390264199C900C20DD3 /* PlayerSelectViewController.swift in Sources */,
+				12E5293526447C880022B439 /* HowToPlayModalViewController.swift in Sources */,
 				1262838E2640EB3400C20DD3 /* howToPlayViewController.swift in Sources */,
 				12DB2FB526409AC2005C73D8 /* CSC690_Final_Project.xcdatamodeld in Sources */,
 				12DB2FAF26409AC2005C73D8 /* ViewController.swift in Sources */,

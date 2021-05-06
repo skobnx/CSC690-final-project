@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -369,12 +370,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQM-V7-bVU">
-                                <rect key="frame" x="333" y="79" width="41" height="30"/>
+                                <rect key="frame" x="328" y="79" width="46" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Wuq-b3-dA2" kind="unwind" animates="NO" unwindAction="myUnwindActionWithUnwindSegue:" id="6yx-pk-5cP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgD-nm-jbf">
+                                <rect key="frame" x="40" y="79" width="42" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Rules">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2CF-uk-baE" kind="presentation" id="maC-gQ-eHC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -395,9 +407,11 @@
                             <constraint firstItem="rZy-Vd-FFa" firstAttribute="centerX" secondItem="6eT-d4-0rC" secondAttribute="centerX" id="IPz-6e-6Yb"/>
                             <constraint firstItem="h78-xV-m4C" firstAttribute="centerX" secondItem="6eT-d4-0rC" secondAttribute="centerX" id="Jhm-p7-xzh"/>
                             <constraint firstItem="f45-SD-6EN" firstAttribute="centerX" secondItem="6eT-d4-0rC" secondAttribute="centerX" id="K5p-4N-G70"/>
+                            <constraint firstItem="hgD-nm-jbf" firstAttribute="top" secondItem="w67-No-EjT" secondAttribute="top" constant="35" id="LnW-oI-brx"/>
                             <constraint firstItem="x6h-fS-Cqk" firstAttribute="centerX" secondItem="6eT-d4-0rC" secondAttribute="centerX" id="LrS-Dh-upl"/>
                             <constraint firstItem="x6h-fS-Cqk" firstAttribute="leading" secondItem="4Mc-s3-Dre" secondAttribute="trailing" constant="15" id="MHf-cl-w3t"/>
                             <constraint firstItem="gzD-gv-iGV" firstAttribute="width" secondItem="6eT-d4-0rC" secondAttribute="width" multiplier="0.345411" id="PFc-gz-Ga1"/>
+                            <constraint firstItem="hgD-nm-jbf" firstAttribute="leading" secondItem="w67-No-EjT" secondAttribute="leading" constant="40" id="Peq-fO-GhF"/>
                             <constraint firstItem="4Mc-s3-Dre" firstAttribute="width" secondItem="6eT-d4-0rC" secondAttribute="width" multiplier="0.2343" id="QYk-qB-Xye"/>
                             <constraint firstItem="sPr-c9-Ta4" firstAttribute="top" secondItem="w67-No-EjT" secondAttribute="top" id="RkP-Ze-IEk"/>
                             <constraint firstItem="FQM-V7-bVU" firstAttribute="top" secondItem="w67-No-EjT" secondAttribute="top" constant="35" id="UcT-RL-J2a"/>
@@ -441,6 +455,39 @@
             </objects>
             <point key="canvasLocation" x="2618.840579710145" y="454.6875"/>
         </scene>
+        <!--How To Play Modal View Controller-->
+        <scene sceneID="JnO-t5-lre">
+            <objects>
+                <viewController id="2CF-uk-baE" customClass="HowToPlayModalViewController" customModule="CSC690_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dbG-uM-ZQ6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjd-pr-LJr">
+                                <rect key="frame" x="30" y="30" width="120" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Return to Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="CloseButton:" destination="2CF-uk-baE" eventType="touchUpInside" id="DU6-tv-3Kw"/>
+                                    <action selector="close_button:" destination="yvq-Mc-dce" eventType="touchUpInside" id="lJR-hS-XO1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oNd-1Q-FsD"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="Yjd-pr-LJr" firstAttribute="leading" secondItem="oNd-1Q-FsD" secondAttribute="leading" constant="30" id="F9k-nx-JYh"/>
+                            <constraint firstItem="Yjd-pr-LJr" firstAttribute="top" secondItem="oNd-1Q-FsD" secondAttribute="top" constant="30" id="fry-J0-Y9i"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rra-Bf-KO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yvq-Mc-dce" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3414" y="455"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qt3-hE-gZk">
             <objects>
@@ -470,5 +517,8 @@
         <image name="game_title" width="776" height="421.5"/>
         <image name="magic" width="826.5" height="609"/>
         <image name="samurai" width="675" height="758"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
