@@ -1,10 +1,3 @@
-//
-//  Player.swift
-//  CSC690-Final-Project
-//
-//  Created by Sebastian Drake on 5/5/21.
-//
-
 import Foundation
 
 class Player{

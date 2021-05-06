@@ -1,9 +1,3 @@
-//
-//  GameModel.swift
-//  CSC690-Final-Project
-//
-//  Created by Sebastian Drake on 5/4/21.
-//
 import UIKit
 import Foundation
 
