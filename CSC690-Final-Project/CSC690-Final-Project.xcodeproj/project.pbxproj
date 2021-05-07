@@ -21,6 +21,10 @@
 		12DB2FB726409AC3005C73D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12DB2FB626409AC3005C73D8 /* Assets.xcassets */; };
 		12DB2FBA26409AC3005C73D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DB2FB826409AC3005C73D8 /* LaunchScreen.storyboard */; };
 		12E5293526447C880022B439 /* HowToPlayModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5293426447C880022B439 /* HowToPlayModalViewController.swift */; };
+		12E52937264512880022B439 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E52936264512880022B439 /* ScoreViewController.swift */; };
+		12E52939264513800022B439 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E52938264513800022B439 /* Score.swift */; };
+		12E5293B264513C30022B439 /* ScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5293A264513C30022B439 /* ScoreStore.swift */; };
+		12E5293E264514180022B439 /* Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12E5293C264514180022B439 /* Scores.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		12DB2FB926409AC3005C73D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12DB2FBB26409AC3005C73D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E5293426447C880022B439 /* HowToPlayModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayModalViewController.swift; sourceTree = "<group>"; };
+		12E52936264512880022B439 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		12E52938264513800022B439 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		12E5293A264513C30022B439 /* ScoreStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStore.swift; sourceTree = "<group>"; };
+		12E5293D264514180022B439 /* Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scores.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,10 @@
 				1261BAA42642631B00712AD4 /* GameModel.swift */,
 				1261BAA62642DFFC00712AD4 /* Player.swift */,
 				1261BAA82642E7AE00712AD4 /* Boss.swift */,
+				12E52936264512880022B439 /* ScoreViewController.swift */,
+				12E52938264513800022B439 /* Score.swift */,
+				12E5293A264513C30022B439 /* ScoreStore.swift */,
+				12E5293C264514180022B439 /* Scores.xcdatamodeld */,
 			);
 			path = "CSC690-Final-Project";
 			sourceTree = "<group>";
@@ -163,15 +175,19 @@
 			files = (
 				12628392264199FF00C20DD3 /* GameViewController.swift in Sources */,
 				12628390264199C900C20DD3 /* PlayerSelectViewController.swift in Sources */,
+				12E5293B264513C30022B439 /* ScoreStore.swift in Sources */,
 				12E5293526447C880022B439 /* HowToPlayModalViewController.swift in Sources */,
 				1262838E2640EB3400C20DD3 /* howToPlayViewController.swift in Sources */,
 				12DB2FB526409AC2005C73D8 /* CSC690_Final_Project.xcdatamodeld in Sources */,
 				12DB2FAF26409AC2005C73D8 /* ViewController.swift in Sources */,
+				12E5293E264514180022B439 /* Scores.xcdatamodeld in Sources */,
 				1261BAA52642631B00712AD4 /* GameModel.swift in Sources */,
 				12DB2FAB26409AC2005C73D8 /* AppDelegate.swift in Sources */,
+				12E52939264513800022B439 /* Score.swift in Sources */,
 				1261BAA72642DFFC00712AD4 /* Player.swift in Sources */,
 				1261BAA92642E7AE00712AD4 /* Boss.swift in Sources */,
 				12DB2FAD26409AC2005C73D8 /* SceneDelegate.swift in Sources */,
+				12E52937264512880022B439 /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +398,16 @@
 			);
 			currentVersion = 12DB2FB426409AC2005C73D8 /* CSC690_Final_Project.xcdatamodel */;
 			path = CSC690_Final_Project.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		12E5293C264514180022B439 /* Scores.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				12E5293D264514180022B439 /* Scores.xcdatamodel */,
+			);
+			currentVersion = 12E5293D264514180022B439 /* Scores.xcdatamodel */;
+			path = Scores.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

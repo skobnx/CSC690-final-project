@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,10 +45,24 @@
                                     <constraint firstAttribute="width" secondItem="Hdf-H1-wbo" secondAttribute="height" multiplier="15:8" id="Mh8-pd-ffQ"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-vT-3XB">
+                                <rect key="frame" x="105" y="547" width="204" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YvE-vT-3XB" secondAttribute="height" multiplier="68:31" id="cMu-dJ-lm2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="View Scores" backgroundImage="button-border">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Gwt-KL-8uN" kind="presentation" id="EAV-wl-dzS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="YvE-vT-3XB" firstAttribute="top" secondItem="3TA-Oe-8HI" secondAttribute="bottom" constant="25" id="0qt-dh-3SR"/>
                             <constraint firstItem="shT-gS-EjY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AeQ-04-CA6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="shT-gS-EjY" secondAttribute="trailing" id="FSm-c6-9Rb"/>
                             <constraint firstItem="Hdf-H1-wbo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.57971" id="FrN-ge-6op"/>
@@ -58,6 +73,7 @@
                             <constraint firstItem="3TA-Oe-8HI" firstAttribute="top" secondItem="XjV-Hu-EcX" secondAttribute="bottom" constant="25" id="dGF-vU-8qh"/>
                             <constraint firstItem="Hdf-H1-wbo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dcy-tG-lIG"/>
                             <constraint firstItem="XjV-Hu-EcX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9m-In-I4S"/>
+                            <constraint firstItem="YvE-vT-3XB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ev2-L0-1jr"/>
                             <constraint firstItem="shT-gS-EjY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x6Z-XC-dGq"/>
                         </constraints>
                     </view>
@@ -125,6 +141,48 @@
                 <exit id="q7Y-Mp-SWU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1744.9275362318842" y="-282.58928571428572"/>
+        </scene>
+        <!--Score View Controller-->
+        <scene sceneID="4KC-pQ-iMx">
+            <objects>
+                <viewController id="Gwt-KL-8uN" customClass="ScoreViewController" customModule="CSC690_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S6C-xO-7BB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qqX-8A-Dgh">
+                                <rect key="frame" x="0.0" y="40" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSk-st-wsO">
+                                <rect key="frame" x="369" y="5" width="30" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="CloseButton:" destination="Gwt-KL-8uN" eventType="touchUpInside" id="qL6-WR-Efa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Qy-Cn-hQU"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qqX-8A-Dgh" firstAttribute="top" secondItem="2Qy-Cn-hQU" secondAttribute="top" constant="40" id="7DE-uB-9wv"/>
+                            <constraint firstItem="2Qy-Cn-hQU" firstAttribute="trailing" secondItem="xSk-st-wsO" secondAttribute="trailing" constant="15" id="Hop-dV-z2f"/>
+                            <constraint firstItem="xSk-st-wsO" firstAttribute="top" secondItem="2Qy-Cn-hQU" secondAttribute="top" constant="5" id="ZW9-of-8F1"/>
+                            <constraint firstItem="qqX-8A-Dgh" firstAttribute="leading" secondItem="2Qy-Cn-hQU" secondAttribute="leading" id="caC-KK-Yf8"/>
+                            <constraint firstItem="qqX-8A-Dgh" firstAttribute="bottom" secondItem="2Qy-Cn-hQU" secondAttribute="bottom" id="i1i-HD-ARi"/>
+                            <constraint firstItem="2Qy-Cn-hQU" firstAttribute="trailing" secondItem="qqX-8A-Dgh" secondAttribute="trailing" id="uUn-Jo-8wb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ScoreTableView" destination="qqX-8A-Dgh" id="GQH-YU-fHk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2uH-yp-sAp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.73913043478262" y="835.71428571428567"/>
         </scene>
         <!--Player Select View Controller-->
         <scene sceneID="9On-F9-aCb">
@@ -543,5 +601,8 @@
         <image name="magic" width="826.5" height="609"/>
         <image name="rules" width="945" height="1584"/>
         <image name="samurai" width="675" height="758"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

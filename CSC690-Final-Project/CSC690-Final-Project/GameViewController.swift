@@ -1,6 +1,9 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    // core data store
+    let store = ScoreStore()
+
     // Player variables
     var player_type = 0
     var player_hp = 0
@@ -168,9 +171,12 @@ class GameViewController: UIViewController {
     }
     
     @objc func updateBossDead(){
-        self.boss_move_log.text = "Defeated " + self.boss_name + " in " + String(self.model.turns) + " turns!"
+        let victory_string = "Defeated " + self.boss_name + " in " + String(self.model.turns) + " turns!"
+        let the_score = Score(score: victory_string)
+        self.store.store(score: the_score)
+        self.boss_move_log.text = victory_string
         self.hideButtons()
-        self.boss_move_log.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        self.boss_move_log.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
     }
     
     @objc func updatePlayerDead(){
@@ -180,7 +186,6 @@ class GameViewController: UIViewController {
         self.player_hp_label.text = String(self.player_hp)
         self.hideButtons()
         self.boss_move_log.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        print(self.model.turns)//DEBUG
     }
     @objc func updateBossCharged(){
         self.boss_move_log.text = "\(self.boss_name) has charged up!"
