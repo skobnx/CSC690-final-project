@@ -25,6 +25,7 @@
 		12E52939264513800022B439 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E52938264513800022B439 /* Score.swift */; };
 		12E5293B264513C30022B439 /* ScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5293A264513C30022B439 /* ScoreStore.swift */; };
 		12E5293E264514180022B439 /* Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12E5293C264514180022B439 /* Scores.xcdatamodeld */; };
+		12E8C1BD2645F3C200D798AC /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8C1BC2645F3C200D798AC /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		12E52938264513800022B439 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		12E5293A264513C30022B439 /* ScoreStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStore.swift; sourceTree = "<group>"; };
 		12E5293D264514180022B439 /* Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scores.xcdatamodel; sourceTree = "<group>"; };
+		12E8C1BC2645F3C200D798AC /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				12E52938264513800022B439 /* Score.swift */,
 				12E5293A264513C30022B439 /* ScoreStore.swift */,
 				12E5293C264514180022B439 /* Scores.xcdatamodeld */,
+				12E8C1BC2645F3C200D798AC /* Helpers.swift */,
 			);
 			path = "CSC690-Final-Project";
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				1261BAA52642631B00712AD4 /* GameModel.swift in Sources */,
 				12DB2FAB26409AC2005C73D8 /* AppDelegate.swift in Sources */,
 				12E52939264513800022B439 /* Score.swift in Sources */,
+				12E8C1BD2645F3C200D798AC /* Helpers.swift in Sources */,
 				1261BAA72642DFFC00712AD4 /* Player.swift in Sources */,
 				1261BAA92642E7AE00712AD4 /* Boss.swift in Sources */,
 				12DB2FAD26409AC2005C73D8 /* SceneDelegate.swift in Sources */,
