@@ -65,9 +65,15 @@ class GameViewController: UIViewController {
         model.generateBoss()
         model.generateButtons()
     }
+    
+    func reset_move_logs(){
+        self.player_move_log.textColor = UIColor.white
+        self.boss_move_log.textColor = UIColor.white
+    }
 
     
     @IBAction func button_one_pressed(_ sender: Any) {
+        self.reset_move_logs()
         // attack returns how much attacked for...
         // can display the result here
         switch button_one_type {
@@ -87,6 +93,7 @@ class GameViewController: UIViewController {
         model.generateButtons()
     }
     @IBAction func button_two_pressed(_ sender: Any) {
+        self.reset_move_logs()
         switch button_two_type {
         case 1:
             model.preform_attack()
@@ -104,6 +111,7 @@ class GameViewController: UIViewController {
         model.generateButtons()
     }
     @IBAction func button_three_pressed(_ sender: Any) {
+        self.reset_move_logs()
         switch button_three_type {
         case 1:
             model.preform_attack()
@@ -162,7 +170,14 @@ class GameViewController: UIViewController {
         self.boss_hp_label.text = String(self.boss_hp)
         let boss_dmg_taken = model.boss_dmg_taken
         self.animate_boss_dmg()
-        self.player_move_log.text = "Player deals \(boss_dmg_taken) damage to the \(self.boss_name)"
+        let red_text: [NSAttributedString.Key: Any] = [.foregroundColor: #colorLiteral(red: 0.9816971421, green: 0.01636762545, blue: 0.06224960834, alpha: 1)]
+        let string_part_1 = NSMutableAttributedString(string: "Player deals ")
+        let string_part_2 =  NSAttributedString(string: "\(boss_dmg_taken) damage", attributes: red_text)
+        let string_part_3 = NSAttributedString(string: " to the \(self.boss_name)!")
+        string_part_1.append(string_part_2)
+        string_part_1.append(string_part_3)
+        self.player_move_log.attributedText = string_part_1
+
     }
     
     @objc func updatePlayerHealth(){
@@ -170,7 +185,13 @@ class GameViewController: UIViewController {
         self.player_hp_label.text = String(self.player_hp)
         let player_dmg_taken = model.player_dmg_taken
         self.animate_player_dmg()
-        self.boss_move_log.text = "\(self.boss_name) deals \(player_dmg_taken) damage to the player!"
+        let red_text: [NSAttributedString.Key: Any] = [.foregroundColor: #colorLiteral(red: 0.9816971421, green: 0.01636762545, blue: 0.06224960834, alpha: 1)]
+        let string_part_1 = NSMutableAttributedString(string: "\(self.boss_name) deals ")
+        let string_part_2 =  NSAttributedString(string: "\(player_dmg_taken) damage", attributes: red_text)
+        let string_part_3 = NSAttributedString(string: " to the player!")
+        string_part_1.append(string_part_2)
+        string_part_1.append(string_part_3)
+        self.boss_move_log.attributedText = string_part_1
     }
     
     @objc func updateBossDead(){
@@ -193,6 +214,7 @@ class GameViewController: UIViewController {
     @objc func updateBossCharged(){
         self.charge_boss(bosstype: self.boss_type)
         self.boss_move_log.text = "\(self.boss_name) has charged up!"
+        self.boss_move_log.textColor = UIColor.yellow
     }
     
     @objc func updateBossUnCharge(){
@@ -202,18 +224,27 @@ class GameViewController: UIViewController {
     @objc func updatePlayerPrepared(){
         let mult_level = model.multiplier
         self.player_move_log.text = "Player has prepared next action will do \(mult_level)x!"
+        self.player_move_log.textColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
     }
     @objc func updatePlayerHealed(){
         self.player_hp = model.player?.health ?? 0
         self.player_hp_label.text = String(self.player_hp)
         let heal_amt = self.model.amount_restored
-        self.player_move_log.text = "Player has restored \(heal_amt) health!"
+        let green_text: [NSAttributedString.Key: Any] = [.foregroundColor: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)]
+        let string_part_1 = NSMutableAttributedString(string: "Player has restored  ")
+        let string_part_2 =  NSAttributedString(string: "\(heal_amt) health", attributes: green_text )
+        let string_part_3 = NSAttributedString(string: "!")
+        string_part_1.append(string_part_2)
+        string_part_1.append(string_part_3)
+        self.player_move_log.attributedText = string_part_1
     }
     @objc func updatePlayerDefended(){
         self.player_move_log.text = "Player has doubled their defense this turn!"
+        self.player_move_log.textColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
     }
     @objc func updateBossStunned(){
         self.boss_move_log.text = "Special attack stunned boss!"
+        self.boss_move_log.textColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
     }
     
     func hideButtons(){
