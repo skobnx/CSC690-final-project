@@ -178,8 +178,10 @@ class GameModel {
             }else{
                 // condition if boss is stunned
                 // boss loses his charge
+                if self.boss_charged{
+                    NotificationCenter.default.post(name: Notification.Name("boss_uncharged"), object: nil)
+                }
                 self.boss_charged = false
-                NotificationCenter.default.post(name: Notification.Name("boss_uncharged"), object: nil)
                 NotificationCenter.default.post(name: Notification.Name("boss_stunned"), object: nil)
             }
         }
