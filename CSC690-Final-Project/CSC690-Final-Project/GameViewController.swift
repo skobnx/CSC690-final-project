@@ -160,6 +160,7 @@ class GameViewController: UIViewController {
         self.boss_hp = model.boss?.health ?? 0
         self.boss_hp_label.text = String(self.boss_hp)
         let boss_dmg_taken = model.boss_dmg_taken
+        self.animate_boss_dmg()
         self.player_move_log.text = "Player deals \(boss_dmg_taken) damage to the \(self.boss_name)"
     }
     
@@ -167,6 +168,7 @@ class GameViewController: UIViewController {
         self.player_hp = model.player?.health ?? 0
         self.player_hp_label.text = String(self.player_hp)
         let player_dmg_taken = model.player_dmg_taken
+        self.animate_player_dmg()
         self.boss_move_log.text = "\(self.boss_name) deals \(player_dmg_taken) damage to the player!"
     }
     
@@ -213,6 +215,53 @@ class GameViewController: UIViewController {
         self.button_three.isHidden = true
         self.play_again_button.isHidden = false
     }
+    
+    @objc func animate_boss_dmg(){
+        let current_boss_image = self.boss_image.image
+        UIView.transition(with: self.boss_image,
+                          duration: 0.25,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            if self.boss_type == 1{
+                                self.boss_image.image = #imageLiteral(resourceName: "red_dragon")
+                            }else if self.boss_type == 2{
+                                self.boss_image.image = #imageLiteral(resourceName: "red_wolf")
+                            }
+                          }, completion: {done in
+                            if done{
+                                UIView.transition(with: self.boss_image,
+                                                  duration: 0.25,
+                                                  options: .transitionCrossDissolve,
+                                                  animations: {
+                                                    self.boss_image.image = current_boss_image
+                                                  })
+                            }
+                          })
+    }// end animate_boss_dmg
+    
+    @objc func animate_player_dmg(){
+        let current_player_image = self.player_image.image
+        UIView.transition(with: self.player_image,
+                          duration: 0.25,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            if self.player_type == 1{
+                                self.player_image.image = #imageLiteral(resourceName: "red_samurai")
+                            }else if self.player_type == 2{
+                                self.player_image.image = #imageLiteral(resourceName: "red_magic")
+                            }
+                          }, completion: {done in
+                            if done{
+                                UIView.transition(with: self.player_image,
+                                                  duration: 0.25,
+                                                  options: .transitionCrossDissolve,
+                                                  animations: {
+                                                    self.player_image.image = current_player_image
+                                                  })
+                            }
+                          })
+    }
+    
 
     
 }
