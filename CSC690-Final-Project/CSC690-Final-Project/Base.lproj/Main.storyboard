@@ -422,6 +422,7 @@
                             <constraint firstItem="x6h-fS-Cqk" firstAttribute="centerX" secondItem="6eT-d4-0rC" secondAttribute="centerX" id="LrS-Dh-upl"/>
                             <constraint firstItem="x6h-fS-Cqk" firstAttribute="leading" secondItem="4Mc-s3-Dre" secondAttribute="trailing" constant="15" id="MHf-cl-w3t"/>
                             <constraint firstItem="gzD-gv-iGV" firstAttribute="width" secondItem="6eT-d4-0rC" secondAttribute="width" multiplier="0.345411" id="PFc-gz-Ga1"/>
+                            <constraint firstItem="h78-xV-m4C" firstAttribute="top" secondItem="w67-No-EjT" secondAttribute="top" constant="30" id="Pit-Hm-cFD"/>
                             <constraint firstItem="4Mc-s3-Dre" firstAttribute="width" secondItem="6eT-d4-0rC" secondAttribute="width" multiplier="0.2343" id="QYk-qB-Xye"/>
                             <constraint firstItem="sPr-c9-Ta4" firstAttribute="top" secondItem="w67-No-EjT" secondAttribute="top" id="RkP-Ze-IEk"/>
                             <constraint firstItem="FQM-V7-bVU" firstAttribute="top" secondItem="w67-No-EjT" secondAttribute="top" constant="35" id="UcT-RL-J2a"/>
@@ -443,6 +444,11 @@
                             <constraint firstItem="Af4-yS-V93" firstAttribute="width" secondItem="6eT-d4-0rC" secondAttribute="width" multiplier="0.35" id="xjZ-0B-n6P"/>
                             <constraint firstItem="9kX-Kf-1ua" firstAttribute="top" secondItem="f45-SD-6EN" secondAttribute="bottom" constant="15" id="yoX-pX-hW5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Pit-Hm-cFD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Cgc-z2-sTv"/>
                     <connections>

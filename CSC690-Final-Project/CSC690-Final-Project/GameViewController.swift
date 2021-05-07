@@ -168,16 +168,19 @@ class GameViewController: UIViewController {
     }
     
     @objc func updateBossDead(){
-        self.boss_move_log.text = "Player has defeated \(self.boss_name)!"
+        self.boss_move_log.text = "Defeated " + self.boss_name + " in " + String(self.model.turns) + " turns!"
         self.hideButtons()
+        self.boss_move_log.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
     }
     
     @objc func updatePlayerDead(){
         self.player_move_log.text = "\(self.boss_name) has defeated player!"
-        self.boss_move_log.text = "Better luck next time!"
+        self.boss_move_log.text = "You Died! Better luck next time!"
         self.player_hp = model.player?.health ?? 0
         self.player_hp_label.text = String(self.player_hp)
         self.hideButtons()
+        self.boss_move_log.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        print(self.model.turns)//DEBUG
     }
     @objc func updateBossCharged(){
         self.boss_move_log.text = "\(self.boss_name) has charged up!"

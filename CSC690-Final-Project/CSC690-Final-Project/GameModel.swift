@@ -2,6 +2,7 @@ import UIKit
 import Foundation
 
 class GameModel {
+    var turns = 0
     // When the card "Prepare" is selected
     // this multiplier becomes 2 and then the next
     // action will be doubled.
@@ -127,6 +128,7 @@ class GameModel {
     }
     
     func preform_attack(){
+        self.turns += 1
         let attack_value = (self.player?.attack ?? 1) * self.multiplier
         self.multiplier = 1  // reset the multiplier
         self.boss?.takeDmg(dmg_amt: attack_value)
@@ -141,6 +143,7 @@ class GameModel {
     }
     
     func preform_defend(){
+        self.turns += 1
         self.player?.increase_defense()
         self.boss_move()
         self.player?.decrease_defense()
@@ -148,6 +151,7 @@ class GameModel {
     }
     
     func preform_heal(){
+        self.turns += 1
         self.amount_to_heal = Int.random(in: 7 ..< 12)
         self.amount_restored = self.amount_to_heal*self.multiplier
         self.player?.heal(heal_amt: self.amount_restored)
@@ -157,6 +161,7 @@ class GameModel {
     }
     
     func preform_special(){
+        self.turns += 1
         let attack_dmg: Int = ((self.player?.attack ?? 1)/2) * self.multiplier
         self.multiplier = 1
         let will_stun_boss = Int.random(in: 1 ..< 101)
@@ -179,6 +184,7 @@ class GameModel {
     }
     
     func preform_prep(){
+        self.turns += 1
         self.multiplier += 1
         NotificationCenter.default.post(name: Notification.Name("player_prepared"), object: nil)
         self.boss_move()
