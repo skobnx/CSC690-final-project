@@ -97,6 +97,7 @@ class GameModel {
             dmg = (self.boss?.attack ?? 0)*3
             self.player_dmg_taken = self.player?.takeDmg(dmg_amt: dmg) ?? 0
             self.boss_charged = false
+            NotificationCenter.default.post(name: Notification.Name("boss_uncharged"), object: nil)
         }
         else if crit <= 15{
             dmg = (self.boss?.attack ?? 0)*2
@@ -178,6 +179,7 @@ class GameModel {
                 // condition if boss is stunned
                 // boss loses his charge
                 self.boss_charged = false
+                NotificationCenter.default.post(name: Notification.Name("boss_uncharged"), object: nil)
                 NotificationCenter.default.post(name: Notification.Name("boss_stunned"), object: nil)
             }
         }

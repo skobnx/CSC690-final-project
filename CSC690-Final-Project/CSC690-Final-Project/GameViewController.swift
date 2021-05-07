@@ -54,6 +54,7 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateBossDead), name: Notification.Name("boss_died"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerDead), name: Notification.Name("player_died"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateBossCharged), name: Notification.Name("boss_charged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBossUnCharge), name: Notification.Name("boss_uncharged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerPrepared), name: Notification.Name("player_prepared"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerHealed), name: Notification.Name("player_healed"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePlayerDefended), name: Notification.Name("player_defended"), object: nil)
@@ -190,8 +191,14 @@ class GameViewController: UIViewController {
         self.boss_move_log.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
     }
     @objc func updateBossCharged(){
+        self.charge_boss(bosstype: self.boss_type)
         self.boss_move_log.text = "\(self.boss_name) has charged up!"
     }
+    
+    @objc func updateBossUnCharge(){
+        self.uncharge_boss(bosstype: self.boss_type)
+    }
+    
     @objc func updatePlayerPrepared(){
         let mult_level = model.multiplier
         self.player_move_log.text = "Player has prepared next action will do \(mult_level)x!"
@@ -260,6 +267,31 @@ class GameViewController: UIViewController {
                                                   })
                             }
                           })
+    }
+    
+    @objc func charge_boss(bosstype: Int){
+        if bosstype == 1{
+            UIView.transition(with: self.boss_image, duration: 0, options: .transitionCrossDissolve, animations: {
+                self.boss_image.image = #imageLiteral(resourceName: "charged_dragon")
+            })
+        }else if bosstype == 2{
+            UIView.transition(with: self.boss_image, duration: 0, options: .transitionCrossDissolve, animations: {
+                self.boss_image.image = #imageLiteral(resourceName: "charged_wolf")
+            })
+        }
+        
+    }
+    
+    @objc func uncharge_boss(bosstype: Int){
+        if bosstype == 1{
+            UIView.transition(with: self.boss_image, duration: 0, options: .transitionCrossDissolve, animations: {
+                self.boss_image.image = #imageLiteral(resourceName: "dragon")
+            })
+        }else if bosstype == 2{
+            UIView.transition(with: self.boss_image, duration: 0, options: .transitionCrossDissolve, animations: {
+                self.boss_image.image = #imageLiteral(resourceName: "wolf")
+            })
+        }
     }
     
 
