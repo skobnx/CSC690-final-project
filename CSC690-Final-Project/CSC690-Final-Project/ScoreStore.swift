@@ -1,10 +1,10 @@
 import Foundation
 import CoreData
 
-
+// interface for interacting with the core data store
+// adapted from the core data example presented in class.
 class ScoreStore {
     
-    // Lazy loading the swift way:
     lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Scores")
         container.loadPersistentStores { (_, error: Error?) in

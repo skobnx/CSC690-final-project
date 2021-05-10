@@ -1,11 +1,13 @@
 import Foundation
 
+// Class defining a player type object
 class Player{
     var type: Int
     var health: Int
     var attack: Int
     var defense: Int
     
+    // init the player stats based on the type.
     init(type: Int){
         self.type = type
         var hp = 0
@@ -28,10 +30,12 @@ class Player{
         self.defense = def
     }
     
+    // function for buffing player defense.
     func increase_defense(){
         self.defense = self.defense*2
     }
     
+    // function for decreasing player defense.
     func decrease_defense(){
         self.defense = self.defense/2
     }

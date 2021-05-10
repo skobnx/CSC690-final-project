@@ -1,17 +1,12 @@
-//
-//  Boss.swift
-//  CSC690-Final-Project
-//
-//  Created by Sebastian Drake on 5/5/21.
-//
-
 import Foundation
 
+// Class defining a boss type object
 class Boss{
     var type: Int
     var health: Int
     var attack: Int
     
+    // init the boss stats based on the type.
     init(type: Int){
         self.type = type
         var hp = 0

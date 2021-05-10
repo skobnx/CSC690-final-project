@@ -1,8 +1,14 @@
 import UIKit
 
+// View controller for the score display view
+// holds a table view that loads the scores from the core data
+// store and displays them.
+// adapted from the core data example presented in class.
+
 class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var ScoreTableView: UITableView!
+    // function for closing the score modal
     @IBAction func CloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
