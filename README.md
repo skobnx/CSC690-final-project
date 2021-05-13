@@ -1,8 +1,17 @@
-CSC 690 Final Project
+CSC 690 Final Project (Kanji Battle)
 
 Author: Sebastian Drake (solo)
 
 SFSU-ID: 913474853
+
+Please run on a phone device sized iPhone 8 or larger.
+App isnt optomized for smaller screens. 
+I preformed most of my design and testing on an iPhone 11.
+
+Update 5/13/2021:
+All proposed features have been implemented and tested including must have and nice to have features.
+Screenshots of the application are in the folder labeled "Screenshots".
+
 
 Proposal:
 Project will be a simple ios card based RPG.
