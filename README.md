@@ -1,17 +1,10 @@
-CSC 690 Final Project (Kanji Battle)
+Kanji Battle, A simple iOS rpg
 
-Author: Sebastian Drake (solo)
-
-SFSU-ID: 913474853
+Author: Sebastian Drake
 
 Please run on a phone device sized iPhone 8 or larger.
 App isnt optomized for smaller screens. 
 I preformed most of my design and testing on an iPhone 11.
-
-Update 5/13/2021:
-All proposed features have been implemented and tested including must have and nice to have features.
-Screenshots of the application are in the folder labeled "Screenshots".
-
 
 Proposal:
 Project will be a simple ios card based RPG.
@@ -36,18 +29,3 @@ Must have features:
 - Main game screen
    - 5 types of action cards
    - at least 1 boss to fight against
-
-Time estimates for project features:
-
-Create UI views for all screens including the "graphics"(approx 5 hours)
-
-Create logic for changing screens (approx 2 hours)
-
-Create logic for character and boss (approx 5 hours)
-
-Create logic for playing the game (approx 10-15 hours)
-
-Nice to have features(features that I will work on if there is time):
-- animations
-- more than one character to play as
-- more than one boss to fight against
